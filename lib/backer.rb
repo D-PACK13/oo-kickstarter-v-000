@@ -1,14 +1,15 @@
 
-class Project
-  attr_accessor :title, :backers
+class Backer
+  
+  attr_accessor :name, :backed_projects
 
-  def initialize(title)
-    @title = title
-    @backers = []
+  def initialize(name)
+    @name = name
+    @backed_projects = []
   end
 
-  def add_backer(backer)
-    @backers << backer
-    backer.backed_projects << self
+  def back_project(project)
+    @backed_projects << project
+    project.backers << self
   end
 end
